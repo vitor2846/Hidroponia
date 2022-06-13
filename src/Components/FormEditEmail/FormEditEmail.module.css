@@ -1,0 +1,22 @@
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+@media screen and (max-width: 400px) {
+    .formulario {
+        margin-left: 60px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .formulario {
+        margin-left: 40px;
+    }
+}

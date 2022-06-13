@@ -1,0 +1,91 @@
+.container {
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: center;
+}
+
+.divisao {
+    display: flex;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    height: 10%;
+    border: 1px solid #222222;
+    background-color: #222222;
+    color: #ffbb33;
+}
+
+.divisao h1{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divisao span{
+    color: #ffffff;
+}
+
+.btn {
+    background-color: #afafaf;
+    color: #ffffff;
+    padding: .7em 1.2em;
+    text-decoration: none;
+    transition: .5s;
+    cursor: pointer;
+    border: none;
+    width: 100px;
+    height: 50px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn:hover {
+    color: #ffbb33;
+}
+
+.form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 1250px){
+    .divisao {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 630px){
+    .divisao {
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: 1fr;
+        width: 300px;
+    }
+
+    
+}
+
+@media screen and (max-width: 450px){
+    .divisao {
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 380px){
+    .divisao {
+        width: 200px;
+    }
+}
+

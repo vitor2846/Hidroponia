@@ -1,0 +1,64 @@
+.projeto_container{
+    padding: 2em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title_container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: auto;
+}
+
+.container{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container h1 {
+    background-color: #222222;
+    color: #ffbb33;
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .5em;
+}
+
+.container p {
+    margin-bottom: 1.5em;
+    color: #7b7b7b;
+}
+
+@media screen and (max-width: 1400px) {
+    .cards{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .cards{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .title_container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .botao{
+        margin-top: 1em;
+    }
+}

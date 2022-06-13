@@ -1,0 +1,27 @@
+.container{
+    margin-top: 25px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container h1{
+    font-size: 50px;
+    background-color: #222222;
+    color: #ffffff;
+    text-align: center;
+}
+
+.container h1 span{
+    color: #ffbb33;
+}
+
+.container p{
+    text-align: center;
+}
+
+.imagem {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
