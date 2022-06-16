@@ -1,21 +1,39 @@
 import NavBar from './Components/NavBar/NavBar'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Login from './Pages/Login/Login'
-import Empresa from './Pages/Empresa'
-import Contatos from './Pages/Contatos'
+import Loja from './Pages/Loja'
+import Contato from './Pages/Contato/Contato'
 import api from './Services/api'
 import Perfil from './Pages/Perfil/Perfil'
 import NovaEstufa from './Pages/NovaEstufa/NovaEstufa'
 import Estufas from './Pages/Estufas/Estufas'
 import Detalhes from './Pages/Detalhes/Detalhes'
 import Editar from './Pages/Editar/Editar'
+//import Footer from './Components/Footer/Footer'
 
 
 function App() {
     const [logado, setLogado] = useState(0)
     const [usuario, setUsuario] = useState({})
+
+    useEffect(()=>{
+      console.log(localStorage)
+      if(localStorage.getItem('status') === 1){
+        setLogado(1)
+        setUsuario(localStorage.getItem('usuario'))
+      }
+
+    }, [])
+
+    useEffect(()=>{
+      console.log(localStorage)
+      if(localStorage.getItem('status') === 1){
+        setLogado(1)
+        setUsuario(localStorage.getItem('usuario'))
+      }
+    }, [logado])
 
     function login(user){
       api.post('/login', user)
@@ -23,6 +41,9 @@ function App() {
           if(data.usuario !== false){
             setUsuario(data.usuario)
             setLogado(1)
+
+            localStorage.setItem('status', 1)
+            localStorage.setItem('usuario', JSON.stringify(data.usuario))
           }
           else{
             alert(data.mensagem)
@@ -49,23 +70,24 @@ function App() {
     }
 
     function sair(){
-        setUsuario({})
-        setLogado(0)
+      localStorage.clear()
+      setUsuario({})
+      setLogado(0)
     }
   
   return (
 
     <Router>
       
-      <NavBar logado={logado} nome={usuario} onClick={sair}/>
+      <NavBar />
 
       <Routes>
         <Route exact path='/' element={<Login logado={logado} login={login} formCad={formCad} sair={sair} cadastrar={cadastrarUsuario} />}/>
-        <Route path='/Perfil' element={<Perfil usuario={usuario} onClick={sair} />}/>
-        <Route path='/Empresa' element={<Empresa/>}/>
-        <Route path='/Contatos' element={<Contatos/>}/>
-        <Route path='/Novaestufa' element={<NovaEstufa usuario={usuario}/>}/>
-        <Route path='/Estufas' element={<Estufas ID={usuario.ID}/>}/>
+        <Route path='/Perfil' element={<Perfil onClick={sair} />} />
+        <Route path='/Loja' element={<Loja/>}/>
+        <Route path='/Contato' element={<Contato />}/>
+        <Route path='/Novaestufa' element={<NovaEstufa />}/>
+        <Route path='/Estufas' element={<Estufas usuario={usuario}/>}/>
         <Route path='/Editar/:nome/:idUsuario' element={<Editar/>}/>
         <Route path='/Detalhes/:idUsuario/:idEstufa/:nomeEstufa' element={<Detalhes/>}/>
       </Routes>

@@ -1,0 +1,16 @@
+.formulario {
+    display: grid;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formulario label {
+    margin-bottom: .6em;
+    font-weight: bold;
+}
+
+.formulario textarea{
+    height: 200px;
+}
+

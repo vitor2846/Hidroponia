@@ -5,13 +5,22 @@ import styles from './NovaEstufa.module.css'
 import {useState, useEffect} from 'react'
 import Loading from '../../Imagens/loading.svg' 
 
-function NovaEstufa({usuario}){
+function NovaEstufa(){
     
     const navigate = useNavigate()
     const [showLoading, setShowLoading] = useState(true)
+    const [usuario, setUsuario] = useState()
 
     useEffect(()=>{
-        setShowLoading(false)
+        if(parseInt(localStorage.getItem('status')) === 1){
+            setShowLoading(false)
+            setUsuario(JSON.parse(localStorage.getItem('usuario')))
+        }
+        else{
+            navigate('/')
+        }
+        
+        // eslint-disable-next-line
     }, [])
 
     function cadastrarEstufa(estufa){

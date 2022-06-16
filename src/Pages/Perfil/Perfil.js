@@ -7,14 +7,24 @@ import api from '../../Services/api'
 import Loading from '../../Imagens/loading.svg'
 
 
-function Perfil({usuario, onClick}){
+function Perfil({onClick}){
     const [showEditEmail, setShowEditEmail] = useState(false)
     const [showEditSenha, setShowEditSenha] = useState(false)
     const [showLoading, setShowLoading] = useState(true)
+    const [usuario, setUsuario] = useState()
     const navigate = useNavigate()
 
     useEffect(()=>{
-        setShowLoading(false)
+        
+        if(parseInt(localStorage.getItem('status')) === 1){
+            setShowLoading(false)
+            setUsuario(JSON.parse(localStorage.getItem('usuario')))
+        }
+        else{
+            navigate('/')
+        }
+
+        // eslint-disable-next-line
     }, [])
 
     function editEmail(){

@@ -3,7 +3,7 @@ import styles from './NavBar.module.css'
 import Logo from '../../Imagens/Logo.png'
 
 
-function NavBar({logado}){
+function NavBar(){
 
     return(
         <header className={styles.header}>
@@ -12,30 +12,30 @@ function NavBar({logado}){
 
             <nav className={styles.navbar}>
                 <ul className={styles.list}>
-                    {logado !== 1 && (
+                    {parseInt(localStorage.getItem('status')) !== 1 && (
                         <li className={styles.item}>
                             <Link to='/'>Login</Link>
                         </li>
                     )}
 
-                    {logado === 1 && (
+                    {parseInt(localStorage.getItem('status')) === 1 && (
                         <li className={styles.item}>
                             <Link to='/Perfil'>Perfil</Link>
                         </li>
                     )}
 
-                    {logado === 1 && (
+                    {parseInt(localStorage.getItem('status')) === 1 &&  (
                         <li className={styles.item}>
                             <Link to='/Estufas'>Estufas</Link>
                         </li>
                     )}
 
                     <li className={styles.item}>
-                        <Link to='/Empresa'>Empresa</Link>
+                        <Link to='/Loja'>Loja</Link>
                     </li>
 
                     <li className={styles.item}>
-                        <Link to='/Contatos'>Contatos</Link>
+                        <Link to='/Contato'>Contato</Link>
                     </li>         
                 </ul>
             </nav>

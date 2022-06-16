@@ -1,11 +1,11 @@
-function Empresa(){
+function Loja(){
     return(
         <>
             <h1>
-                Página Empresa
+                Página Loja
             </h1>
         </>
     )
 }
 
-export default Empresa
+export default Loja

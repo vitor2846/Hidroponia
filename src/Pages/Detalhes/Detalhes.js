@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import api from '../../Services/api'
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { Chart } from "react-google-charts"
 import styles from './Detalhes.module.css'
 import LinkButton from '../../Components/LinkButton/LinkButton'
@@ -18,6 +18,15 @@ function Detalhes(props){
     const [mediaPh, setMediaPh] = useState([])
     const [mediaLum, setMediaLum] = useState([])
     const [tam, setTam] = useState(0)
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+        if(parseInt(localStorage.getItem('status')) !== 1){
+            navigate('/')
+        }
+        
+        // eslint-disable-next-line
+    }, [])
 
     useEffect(()=>{
         const body = {'id_estufa': parseInt(idEstufa), 'id_usuario': parseInt(idUsuario)}
