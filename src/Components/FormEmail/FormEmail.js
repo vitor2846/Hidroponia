@@ -13,8 +13,7 @@ function FormEmail({handleSubmit, usuario}){
 
     const submit = (e)=>{
         e.preventDefault()
-        handleSubmit(mensagem)
-        
+        handleSubmit(mensagem) 
     }
     
     return(
@@ -23,7 +22,7 @@ function FormEmail({handleSubmit, usuario}){
             <Input text='Nome' type='text' placeholder='Digite o seu nome...' name='nome' handleOnChange={handleChange} value={usuario ? usuario.NOME : ''}/>
             <Input text='E-mail' type='email' placeholder='Digite o seu e-mail...' name='email' handleOnChange={handleChange} value={usuario ? usuario.EMAIL : ''}/>
             <label htmlFor={mensagem}>Mensagem:</label>
-            <textarea placeholder='Digite uma mensagem...' name='mensagem' onChange={handleChange}/>
+            <textarea placeholder='Digite uma mensagem...' name='msg' onChange={handleChange}/>
             <Button text='enviar'/>
         </form>
 

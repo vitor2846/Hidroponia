@@ -1,4 +1,6 @@
 .container{
+    display: grid;
+    grid-template-columns: 1fr;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
@@ -19,4 +21,9 @@
 .container p {
     margin-bottom: 1.5em;
     color: #7b7b7b;
+}
+
+.container img{
+    margin-left: auto;
+    margin-right: auto;
 }

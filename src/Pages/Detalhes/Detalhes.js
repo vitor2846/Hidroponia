@@ -75,7 +75,7 @@ function Detalhes(props){
             setMediaLum(arraydata5)
 
 
-            const arraydata2 = [["Temperatura", "Humidade", "PH", "Luminosidade", "Nivel", "Data", "Hora"]]
+            const arraydata2 = [["Temperatura", "Humidade", "PH", "Luminosidade", "Nivel", "Data", "Hora", "Bomba", "Lâmpada"]]
             for(let i=0; i < dados.length; i++){
                 if(dados[i].nivel_res === "0.00"){
                     nivelReservatorio = "Vazio"
@@ -100,7 +100,7 @@ function Detalhes(props){
                     luminosidade = "Escuro"
                 }
 
-                arraydata2.push([dados[i].temperatura, dados[i].humidade, dados[i].ph, luminosidade, nivelReservatorio, dados[i].data, dados[i].hora])                    
+                arraydata2.push([dados[i].temperatura, dados[i].humidade, dados[i].ph, luminosidade, nivelReservatorio, dados[i].data, dados[i].hora, dados[i].statusBomba, dados[i].statusLampada])                    
             }
 
             setTableDados(arraydata2)
@@ -150,6 +150,8 @@ function Detalhes(props){
                                 <li>Nivel Reservatório: <span>{tableDados[tam][4]}</span></li>
                                 <li>Data: <span>{tableDados[tam][5]}</span></li>
                                 <li>Hora: <span>{tableDados[tam][6]}</span></li>
+                                <li>Bomba: <span>{tableDados[tam][7]}</span></li>
+                                <li>Lâmpada: <span>{tableDados[tam][8]}</span></li>
                             </ul>
                         )}
 

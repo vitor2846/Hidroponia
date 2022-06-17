@@ -19,7 +19,6 @@ function App() {
     const [usuario, setUsuario] = useState({})
 
     useEffect(()=>{
-      console.log(localStorage)
       if(localStorage.getItem('status') === 1){
         setLogado(1)
         setUsuario(localStorage.getItem('usuario'))
@@ -28,7 +27,6 @@ function App() {
     }, [])
 
     useEffect(()=>{
-      console.log(localStorage)
       if(localStorage.getItem('status') === 1){
         setLogado(1)
         setUsuario(localStorage.getItem('usuario'))
