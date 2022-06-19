@@ -1,10 +1,11 @@
 import {useState} from 'react'
+import Button from '../Formulario/Button/Button'
 import Input from "../Formulario/Input/Input"
 import styles from './FormCompra.module.css'
 
 function FormCompra({usuario, handleSubmit}){
     
-    const [informacoes, setInformacoes] = useState()
+    const [informacoes, setInformacoes] = useState({"quantidade": 0})
 
     function handleChange(e){
         setInformacoes({...informacoes, [e.target.name]: e.target.value })
@@ -29,16 +30,13 @@ function FormCompra({usuario, handleSubmit}){
                 <Input text="Bairro" placeholder="Digite o seu bairro..." name="bairro" type="text" handleOnChange={handleChange}/>
                 <Input text="Cidade" placeholder="Digite a sua cidade..." name="cidade" type="text" handleOnChange={handleChange}/>
                 <Input text="Estado" placeholder="Digite o seu estado..." name="estado" type="text" handleOnChange={handleChange}/>
-                
-                <a href="https://pag.ae/7Yo6qNdjp/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a>
-
-                <a href="https://pag.ae/7Yo8d-tm3/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a>
-
+                <Input text="Quantidade" placeholder="Digite a quantidade..." name="quantidade" type="number" handleOnChange={handleChange} value="0"/>
+                {informacoes.quantidade > 0 && (<p>Valor total: R${informacoes.quantidade * 1000.00}</p>)}
+                {informacoes.quantidade < 0 && (<p>Insira um valor válido para quantidade</p>)}
+                <Button text="Enviar pedido"/>
             </form>
         </>
     )
 }
 
 export default FormCompra
-
-//<a href="https://pag.ae/7Yo6qNdjp/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a>

@@ -3,19 +3,8 @@
     grid-template-columns: 1fr;
     width: 50%;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-}
-
-
-
-.formulario button{
-    margin-bottom: 2em;
-    width: 210px;
-    height: 35px;
-    margin-left: auto;
-    margin-right: auto;
-    border: none;
 }

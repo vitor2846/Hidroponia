@@ -13,7 +13,7 @@ import Detalhes from './Pages/Detalhes/Detalhes'
 import Editar from './Pages/Editar/Editar'
 import Compra from './Pages/Compra/Compra'
 //import Footer from './Components/Footer/Footer'
-import Finalizado from './Pages/Finalizado/Finalizado'
+
 
 
 function App() {
@@ -91,7 +91,6 @@ function App() {
         <Route path='/Editar/:nome/:idUsuario' element={<Editar/>}/>
         <Route path='/Detalhes/:idUsuario/:idEstufa/:nomeEstufa' element={<Detalhes/>}/>
         <Route path='/Comprar' element={<Compra/>}/>
-        <Route path='/Finalizado/:transacao_id' element={<Finalizado/>}/>
       </Routes>
 
     </Router>
