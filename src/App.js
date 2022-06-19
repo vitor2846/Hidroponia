@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Login from './Pages/Login/Login'
-import Loja from './Pages/Loja'
+import Loja from './Pages/Loja/Loja'
 import Contato from './Pages/Contato/Contato'
 import api from './Services/api'
 import Perfil from './Pages/Perfil/Perfil'
@@ -11,7 +11,9 @@ import NovaEstufa from './Pages/NovaEstufa/NovaEstufa'
 import Estufas from './Pages/Estufas/Estufas'
 import Detalhes from './Pages/Detalhes/Detalhes'
 import Editar from './Pages/Editar/Editar'
+import Compra from './Pages/Compra/Compra'
 //import Footer from './Components/Footer/Footer'
+import Finalizado from './Pages/Finalizado/Finalizado'
 
 
 function App() {
@@ -88,6 +90,8 @@ function App() {
         <Route path='/Estufas' element={<Estufas usuario={usuario}/>}/>
         <Route path='/Editar/:nome/:idUsuario' element={<Editar/>}/>
         <Route path='/Detalhes/:idUsuario/:idEstufa/:nomeEstufa' element={<Detalhes/>}/>
+        <Route path='/Comprar' element={<Compra/>}/>
+        <Route path='/Finalizado/:transacao_id' element={<Finalizado/>}/>
       </Routes>
 
     </Router>
