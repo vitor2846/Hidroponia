@@ -13,15 +13,23 @@ function FormCompra({usuario, handleSubmit}){
 
     function submit(e){
         e.preventDefault()
-        handleSubmit(informacoes)
+        if(informacoes.quantidade > 0){
+            handleSubmit(informacoes)
+        }
+        else{
+            alert('Para realizar o pedido deve ter o mínimo de uma unidade')
+        }
     }
+    
     return(
         <>
-            <h1>Formulario de compra</h1>
-            <p>Nome: {usuario.NOME}</p>
-            <p>E-mail: {usuario.EMAIL}</p>
+            <div className={styles.usuario}>
+                <h1>Formulario de pedido</h1>
+                <p><span>Nome:</span> {usuario.NOME}</p>
+                <p><span>E-mail:</span> {usuario.EMAIL}</p>
+            </div>
 
-            <h2>Informações para entrega:</h2>
+            <h2>Informações adicionais do pedido:</h2>
             <form className={styles.formulario} onSubmit={submit}>
                 <Input text="Telefone" placeholder="Ex: 51999999999" name="telefone" type="text" handleOnChange={handleChange}/>
                 <Input text="Rua" placeholder="Digite o nome da sua rua..." name="rua" type="text" handleOnChange={handleChange}/>

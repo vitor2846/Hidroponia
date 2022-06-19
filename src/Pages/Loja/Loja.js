@@ -1,7 +1,14 @@
-import LinkButton from '../../Components/LinkButton/LinkButton'
+//import LinkButton from '../../Components/LinkButton/LinkButton'
+import { useNavigate } from 'react-router-dom'
 import styles from './Loja.module.css'
 
 function Loja(){
+    const navigate = useNavigate()
+    
+    function navegar(){
+        navigate('/Comprar')
+    }
+
     return(
         <div className={styles.container}>
             <div className={styles.titulo}>
@@ -19,7 +26,7 @@ function Loja(){
                 <li className={styles.foto06}><span>Interior</span></li>
             </ul>
 
-            <LinkButton to='/Comprar' text='Comprar'/>
+            <button className={styles.btn} onClick={navegar}>Realizar pedido</button>
         </div>
     )
 }

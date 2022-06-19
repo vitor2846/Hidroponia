@@ -127,3 +127,21 @@
 	background-position: 0px 0px;
 	background-size: 300px 300px;
 }
+
+.btn {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    transition: 0.5;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+.btn:hover{
+    color: #ffbb33;
+	cursor: pointer;
+}

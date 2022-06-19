@@ -8,3 +8,28 @@
     margin-right: auto;
     text-align: center;
 }
+
+.usuario{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.usuario h1{
+    background-color: #222222;
+    color: #ffbb33;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.usuario p{
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.usuario span{
+    
+    color: #ffbb33;
+}
