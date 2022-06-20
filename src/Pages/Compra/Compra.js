@@ -27,6 +27,7 @@ function Compra(){
     
     function submit(info){
         info.id_usuario = usuario.ID
+        info.email = usuario.EMAIL
 
         var date = new Date()
         var dia = String(date.getDate()).padStart(2, '0')
@@ -34,6 +35,7 @@ function Compra(){
         var ano = date.getFullYear()
         var horas = parseInt(date.getHours())
         var minutos = parseInt(date.getMinutes())
+        var segundos = parseInt(date.getSeconds())
 
         if (horas < 10){
             horas = '0' + horas
@@ -41,9 +43,13 @@ function Compra(){
         if (minutos < 10){
             minutos = "0" + minutos
         }
+        if (segundos < 10){
+            segundos = '0' + segundos
+        }
+
 
         info["data"] = ano + '-' + mes + '-' + dia
-        info["hora"] = horas + ':' + minutos + ':00'
+        info["hora"] = horas + ':' + minutos + ':' + segundos
 
         api.post('/cadastrar_pedido', info)
             .then(({data})=>{
