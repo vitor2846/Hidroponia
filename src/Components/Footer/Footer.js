@@ -10,7 +10,7 @@ function Footer(){
                 <li><FaLinkedin></FaLinkedin></li>
             </ul>
             <p className={styles.copy_right}>
-                <span>Costs</span> &copy;2022
+                <span>Gerenciador de estufas</span> &copy;2022
             </p>
         </footer>
     )

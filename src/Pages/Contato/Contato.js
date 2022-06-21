@@ -6,7 +6,7 @@ import Loading from '../../Imagens/loading.svg'
 
 
 function Contatos({usuario}){
-    
+
     const [showLoading, setShowLoading] = useState(true)
 
     useEffect(()=>{
@@ -22,6 +22,7 @@ function Contatos({usuario}){
         var ano = date.getFullYear()
         var horas = parseInt(date.getHours())
         var minutos = parseInt(date.getMinutes())
+        var segundos = parseInt(date.getSeconds())
 
         if (horas < 10){
             horas = '0' + horas
@@ -29,11 +30,13 @@ function Contatos({usuario}){
         if (minutos < 10){
             minutos = "0" + minutos
         }
+        if (segundos < 10){
+            segundos = '0' + segundos
+        }
 
         mensagem["data"] = ano + '-' + mes + '-' + dia
-        mensagem["hora"] = horas + ':' + minutos + ':00'
+        mensagem["hora"] = horas + ':' + minutos + ':' + segundos
 
-        console.log(mensagem)
 
         setTimeout(()=>{
             api.post('/enviar_mensagem', mensagem)
