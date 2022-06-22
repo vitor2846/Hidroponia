@@ -59,7 +59,7 @@ function Detalhes(props){
 
         if(dados){
             const arraydata1 = [["Element", "Temperatura"]]
-            const arraydata3 = [["Element", "Humidade"]]
+            const arraydata3 = [["Element", "Umidade"]]
             const arraydata4 = [["Element", "PH"]]
             const arraydata5 = [["Element", "Luminosidade"]]
             for(let i=0; i < medias.length; i++){
@@ -75,7 +75,7 @@ function Detalhes(props){
             setMediaLum(arraydata5)
 
 
-            const arraydata2 = [["Temperatura", "Humidade", "PH", "Luminosidade", "Nivel", "Data", "Hora", "Bomba", "Lâmpada"]]
+            const arraydata2 = [["Temperatura", "Umidade", "PH", "Luminosidade", "Nivel", "Data", "Hora", "Bomba", "Lâmpada"]]
             for(let i=0; i < dados.length; i++){
                 if(dados[i].nivel_res === "0.00"){
                     nivelReservatorio = "Vazio"
@@ -144,7 +144,7 @@ function Detalhes(props){
                         {tam > 1 && (
                             <ul>
                                 <li>Temperatura: <span>{tableDados[tam][0]}</span></li>
-                                <li>Humidade: <span>{tableDados[tam][1]}</span></li>
+                                <li>Umidade: <span>{tableDados[tam][1]}</span></li>
                                 <li>PH: <span>{tableDados[tam][2]}</span></li>
                                 <li>Luminosidade: <span>{tableDados[10][3]}</span></li>
                                 <li>Nivel Reservatório: <span>{tableDados[tam][4]}</span></li>
@@ -167,7 +167,7 @@ function Detalhes(props){
                     
                     {mediaHum.length > 1 && (
                         <div className={styles.container_tabela}>
-                            <h1>Média da humidade diária:</h1>
+                            <h1>Média da umidade diária:</h1>
                             <Chart className={styles.chart} chartType="ColumnChart" options={options2} data={mediaHum} />
                         </div>
                     )}

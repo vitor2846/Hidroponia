@@ -17,8 +17,17 @@
     width: 50%;
 }
 
+.texto{
+	text-align: justify;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	color: #7b7b7b;
+	text-indent: 1.5em;
+}
+
 .albumFotos {
-	width: 90%;
+	width: 95%;
     margin-top: 10px;
 	margin-left: auto;
     margin-right: auto;
@@ -57,7 +66,7 @@
 }
 
 .foto01 {
-	background: url('../../Imagens/Arduino.jpg') no-repeat;
+	background: url('../../Imagens/Arduino02.png') no-repeat;
 	background-position: 50% 50%;
 	background-size: 400px 400px;
 	background-color: #ffffff
@@ -105,7 +114,7 @@
 }
 
 .foto05 {
-	background: url('../../Imagens/Interior03.jpeg') no-repeat;
+	background: url('../../Imagens/Arduino03.png') no-repeat;
 	background-position: 50% 50%;
 	background-size: 400px 400px;
 	background-color: #ffffff
@@ -144,4 +153,181 @@
 .btn:hover{
     color: #ffbb33;
 	cursor: pointer;
+}
+
+@media screen and (max-width: 730px) {
+	.albumFotos li {
+		width: 200px;
+		height: 200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+	.foto01 {
+		background-size: 300px 300px;
+	}
+	
+	.foto01:hover {
+		background-size: 200px 200px;
+	}
+	
+	.foto02 {
+		background-size: 300px 300px;
+	}
+	
+	.foto02:hover {
+		background-size: 200px 200px;
+	}
+	
+	.foto03 {
+		background-size: 300px 300px;
+	}
+	
+	.foto03:hover {
+		background-size: 200px 200px;
+	}
+	
+	.foto04 {
+		background-size: 300px 300px;
+	}
+	
+	.foto04:hover {
+		background-size: 200px 200px;
+	}
+	
+	.foto05 {
+		background-size: 300px 300px;
+	}
+	
+	.foto05:hover {
+		background-size: 200px 200px;
+	}
+	
+	.foto06 {
+		background-size: 300px 300px;
+	}
+	
+	.foto06:hover {
+		background-size: 200px 200px;
+	}
+	
+}
+
+@media screen and (max-width: 460px) {
+	.albumFotos li {
+		width: 150px;
+		height: 150px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+	.foto01 {
+		background-size: 250px 250px;
+	}
+	
+	.foto01:hover {
+		background-size: 150px 150px;
+	}
+	
+	.foto02 {
+		background-size: 250px 250px;
+	}
+	
+	.foto02:hover {
+		background-size: 150px 150px;
+	}
+	
+	.foto03 {
+		background-size: 250px 250px;
+	}
+	
+	.foto03:hover {
+		background-size: 150px 150px;
+	}
+	
+	.foto04 {
+		background-size: 250px 250px;
+	}
+	
+	.foto04:hover {
+		background-size: 150px 150px;
+	}
+	
+	.foto05 {
+		background-size: 250px 250px;
+	}
+	
+	.foto05:hover {
+		background-size: 150px 150px;
+	}
+	
+	.foto06 {
+		background-size: 250px 250px;
+	}
+	
+	.foto06:hover {
+		background-size: 150px 150px;
+	}
+	
+}
+
+@media screen and (max-width: 360px) {
+	.albumFotos li {
+		width: 100px;
+		height: 100px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+	.foto01 {
+		background-size: 200px 200px;
+	}
+	
+	.foto01:hover {
+		background-size: 100px 100px;
+	}
+	
+	.foto02 {
+		background-size: 200px 200px;
+	}
+	
+	.foto02:hover {
+		background-size: 100px 100px;
+	}
+	
+	.foto03 {
+		background-size: 200px 200px;
+	}
+	
+	.foto03:hover {
+		background-size: 100px 100px;
+	}
+	
+	.foto04 {
+		background-size: 200px 200px;
+	}
+	
+	.foto04:hover {
+		background-size: 100px 100px;
+	}
+	
+	.foto05 {
+		background-size: 200px 200px;
+	}
+	
+	.foto05:hover {
+		background-size: 100px 100px;
+	}
+	
+	.foto06 {
+		background-size: 200px 200px;
+	}
+	
+	.foto06:hover {
+		background-size: 100px 100px;
+	}
+	
 }
