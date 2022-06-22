@@ -3,6 +3,7 @@ import {BsPencil, BsFillTrashFill} from 'react-icons/bs'
 import styles from './EstufaCard.module.css'
 
 function EstufaCard({estufa, handleRemove, idUsuario}){
+
     const remove = (e)=>{
         e.preventDefault()
         handleRemove(estufa.nome)
