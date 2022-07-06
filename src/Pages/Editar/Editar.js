@@ -16,7 +16,7 @@ function Editar(props){
     
     useEffect(()=>{
         
-        if(parseInt(localStorage.getItem('status')) === 1 && nome !== undefined){
+        if(parseInt(localStorage.getItem('status')) === 1){
             setShowLoading(false)
             setUsuario(JSON.parse(localStorage.getItem('usuario')))
         }

@@ -9,7 +9,7 @@ import Loading from '../../Imagens/loading.svg'
 
 function Detalhes(props){
     const [showLoading, setShowLoading] = useState(true)
-    const {idEstufa, idUsuario, nomeEstufa} = useParams()
+    const {idEstufa, nomeEstufa} = useParams()
     const [dados, setDados] = useState({})
     const [medias, setMedias] = useState([])
     const [tableDados, setTableDados] = useState([])
@@ -29,7 +29,8 @@ function Detalhes(props){
     }, [])
 
     useEffect(()=>{
-        const body = {'id_estufa': parseInt(idEstufa), 'id_usuario': parseInt(idUsuario)}
+        var usuario = JSON.parse(localStorage.getItem('usuario'))
+        const body = {'id_estufa': parseInt(idEstufa), 'id_usuario': parseInt(usuario.ID)}
 
         setTimeout(() => {
             api.post('/dados_estufa', body)
@@ -51,7 +52,7 @@ function Detalhes(props){
             setShowLoading(false)
         }, 2000)
 
-    }, [idEstufa, idUsuario])
+    }, [idEstufa])
 
     useEffect(()=>{
         var nivelReservatorio = ""
@@ -116,6 +117,7 @@ function Detalhes(props){
         width: "90%",
         height: "600px",
     }
+
     const formatters = [
         {
             type: "NumberFormat",

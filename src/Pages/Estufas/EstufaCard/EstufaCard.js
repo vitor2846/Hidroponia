@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import {BsPencil, BsFillTrashFill} from 'react-icons/bs'
 import styles from './EstufaCard.module.css'
 
-function EstufaCard({estufa, handleRemove, idUsuario}){
+function EstufaCard({estufa, handleRemove}){
 
     const remove = (e)=>{
         e.preventDefault()
@@ -15,11 +15,11 @@ function EstufaCard({estufa, handleRemove, idUsuario}){
 
             <ul className={styles.estufa_card_actions}>
                 <li>
-                    <Link to={`/Detalhes/${idUsuario}/${estufa.id}/${estufa.nome}`}>Detalhes</Link>
+                    <Link to={`/Detalhes/${estufa.id}/${estufa.nome}`}>Detalhes</Link>
                 </li>
 
                 <li>
-                    <Link to={`/Editar/${estufa.nome}/${idUsuario}`}>
+                    <Link to={`/Editar/${estufa.nome}`}>
                         <BsPencil/>Editar
                     </Link>
                 </li>

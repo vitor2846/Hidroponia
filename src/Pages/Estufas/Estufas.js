@@ -73,7 +73,7 @@ function Estufas({usuario}){
             </div>
 
             <div className={styles.cards}>
-                {estufas.length > 0 && !showLoading && estufas.map((estufa)=>(<EstufaCard estufa={estufa} handleRemove={removeEstufa} idUsuario={usuario.ID}></EstufaCard>))}
+                {estufas.length > 0 && !showLoading && estufas.map((estufa)=>(<EstufaCard estufa={estufa} handleRemove={removeEstufa}></EstufaCard>))}
                 {estufas.length === 0 && !showLoading && (<p>Você não possui nenhuma estufa cadastrada.</p>)} 
                 {showLoading && <img src={Loading} alt='loading'/>}
             </div>

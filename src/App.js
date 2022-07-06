@@ -14,6 +14,8 @@ import Editar from './Pages/Editar/Editar'
 import Compra from './Pages/Compra/Compra'
 //import Footer from './Components/Footer/Footer'
 
+//useLocalStorage
+
 
 
 function App() {
@@ -88,8 +90,8 @@ function App() {
         <Route path='/Contato' element={<Contato />}/>
         <Route path='/Novaestufa' element={<NovaEstufa />}/>
         <Route path='/Estufas' element={<Estufas usuario={usuario}/>}/>
-        <Route path='/Editar/:nome/:idUsuario' element={<Editar/>}/>
-        <Route path='/Detalhes/:idUsuario/:idEstufa/:nomeEstufa' element={<Detalhes/>}/>
+        <Route path='/Editar/:nome' element={<Editar/>}/>
+        <Route path='/Detalhes/:idEstufa/:nomeEstufa' element={<Detalhes/>}/>
         <Route path='/Comprar' element={<Compra/>}/>
       </Routes>
 
