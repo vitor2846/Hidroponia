@@ -76,7 +76,7 @@ function App() {
       setUsuario({})
       setLogado(0)
     }
-  
+
   return (
 
     <Router>

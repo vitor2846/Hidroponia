@@ -4,14 +4,24 @@ import FormLogin from '../../Components/FormLogin/FormLogin'
 import styles from './Login.module.css'
 import Loading from '../../Imagens/loading.svg'
 import LinkButton from '../../Components/LinkButton/LinkButton'
+import { useNavigate } from 'react-router-dom'
 
 
 function Login({logado, login, formCad, sair, cadastrar}){
     
     const [showLoading, setShowLoading] = useState(true)
+    const navigate = useNavigate()
+
 
     useEffect(()=>{
-        setShowLoading(false)
+        if(parseInt(localStorage.getItem('status')) === 1){
+            navigate('/Estufas')
+        }
+        else{
+            setShowLoading(false)
+        }
+
+        // eslint-disable-next-line
     }, [])
 
     function logar(usuario){
